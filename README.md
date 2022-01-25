@@ -2,8 +2,8 @@
 
 # Pagina Inicial do projeto
 
-<div> align="center"
-img src="https://user-images.githubusercontent.com/77131209/150891348-1919cda0-3b24-4c0b-b037-a6006bc72276.png" width="100px" /
+<div align="center"> 
+<img src="https://user-images.githubusercontent.com/77131209/150891348-1919cda0-3b24-4c0b-b037-a6006bc72276.png" width="100px" />
 </div>
 
 # Getting Started with Create React App

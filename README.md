@@ -6,14 +6,6 @@
 <img src="https://user-images.githubusercontent.com/77131209/150891348-1919cda0-3b24-4c0b-b037-a6006bc72276.png" width="1000px" />
 </div>
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
 ### `yarn start`
 
 Runs the app in the development mode.\

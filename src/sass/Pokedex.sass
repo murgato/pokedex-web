@@ -1,0 +1,25 @@
+@supports (display: grid)
+    .pokedex
+        display: grid
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 19rem))
+        padding-top: 2rem
+        justify-content: center
+        align-items: center
+        justify-items: center
+
+@media only screen and (max-device-width: 425px)
+    .miniPokemonDetails
+        width: 67vw !important
+
+.btn-lazy-loading
+    border-radius: 2px
+    background-color: transparent !important
+    font-weight: bold !important
+    text-transform: uppercase
+    border-color: #e56334 !important
+    color: #e56334 !important
+    margin-bottom: 30px
+    &:hover
+        background-color: #d12b4d !important
+        color: white !important

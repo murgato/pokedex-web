@@ -1,4 +1,4 @@
 export type RouteType = {
-  Component: () => JSX.Element;
+  Component: any;
   path: string;
 };

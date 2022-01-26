@@ -16,6 +16,11 @@
   }
 }
 
+.container-btn-lazy-loading {
+  display: flex !important;
+  justify-content: center;
+}
+
 .btn-lazy-loading {
   border-radius: 2px;
   background-color: transparent !important;
@@ -24,9 +29,30 @@
   border-color: #e56334 !important;
   color: #e56334 !important;
   margin-bottom: 30px;
+  display: flex !important;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 210px;
+  justify-content: center;
 }
 
 .btn-lazy-loading:hover {
   background-color: #d12b4d !important;
   color: white !important;
+}
+
+.animation-hover:hover {
+  cursor: pointer;
+  animation: shadow-drop-2-bottom 0.5s normal;
+}
+
+@keyframes shadow-drop-2-bottom {
+  0% {
+    transform: translateZ(0) translateY(0);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    transform: translateZ(50px) translateY(-12px);
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
 }

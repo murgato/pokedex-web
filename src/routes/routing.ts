@@ -9,6 +9,6 @@ export const routing: RouteType[] = [
   },
   {
     Component: PokemonDetails,
-    path: "/PokemonDetails",
+    path: "/PokemonDetails/:name",
   },
 ];

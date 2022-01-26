@@ -1,4 +1,5 @@
-import React from "react";
+import React, { memo } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../css/MiniPokemonDetails.css";
 import {
   ContainerTypes,
@@ -18,7 +19,7 @@ interface Props {
   backgroundColor: string;
   types: [];
   img: string;
-  img_shiny: string;
+  className?: string;
 }
 
 const MiniPokemonDetails = ({
@@ -26,13 +27,20 @@ const MiniPokemonDetails = ({
   backgroundColor,
   types,
   img,
-  img_shiny,
+  className,
 }: Props) => {
+  const navigate = useNavigate();
+
+  const goToPageDetails = () => {
+    navigate(`PokemonDetails/${name}`);
+  };
+
   return (
     <Container
       isGrandient={colorsTypes[backgroundColor].isGrandient}
       backgroundColor={colorsTypes[backgroundColor].colors}
-      className="miniPokemonDetails"
+      className={className + " miniPokemonDetails"}
+      onClick={goToPageDetails}
     >
       <Glass>
         <Pokeball>
@@ -57,4 +65,4 @@ const MiniPokemonDetails = ({
   );
 };
 
-export default MiniPokemonDetails;
+export default memo(MiniPokemonDetails);

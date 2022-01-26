@@ -12,6 +12,10 @@
     .miniPokemonDetails
         width: 67vw !important
 
+.container-btn-lazy-loading
+    display: flex !important
+    justify-content: center
+
 .btn-lazy-loading
     border-radius: 2px
     background-color: transparent !important
@@ -20,6 +24,42 @@
     border-color: #e56334 !important
     color: #e56334 !important
     margin-bottom: 30px
+    display: flex !important
+    flex-wrap: nowrap
+    align-items: center
+    width: 210px
+    justify-content: center
     &:hover
         background-color: #d12b4d !important
         color: white !important
+
+.animation-hover
+    &:hover
+        cursor: pointer
+        animation: shadow-drop-2-bottom 0.5s normal
+
+@-webkit-keyframes shadow-drop-2-bottom
+  0% 
+    -webkit-transform: translateZ(0) translateY(0)
+    transform: translateZ(0) translateY(0)
+    -webkit-box-shadow: 0 0 0 0 transparent
+    box-shadow: 0 0 0 0 transparent
+
+  100% 
+    -webkit-transform: translateZ(50px) translateY(-12px)
+    transform: translateZ(50px) translateY(-12px)
+    -webkit-box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35)
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35)
+
+@keyframes shadow-drop-2-bottom
+    0%
+        -webkit-transform: translateZ(0) translateY(0)
+        transform: translateZ(0) translateY(0)
+        -webkit-box-shadow: 0 0 0 0 transparent
+        box-shadow: 0 0 0 0 transparent
+
+    100%
+        -webkit-transform: translateZ(50px) translateY(-12px)
+        transform: translateZ(50px) translateY(-12px)
+        -webkit-box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35)
+        box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35)

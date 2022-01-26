@@ -1,3 +1,4 @@
+import { Spinner } from "react-bootstrap";
 import styled from "styled-components";
 
 interface PropsContainer {
@@ -13,7 +14,8 @@ export const Container = styled.div<PropsContainer>`
   ${(props) =>
     props.isGrandient
       ? `background-image: linear-gradient(to top, ${props.backgroundColor})`
-      : `background-color: ${props.backgroundColor}`}
+      : `background-color: ${props.backgroundColor}`};
+
 `;
 
 export const Glass = styled.div`
@@ -95,4 +97,10 @@ export const ContainerType = styled.div<PropsContainer>`
   min-width: 63px;
   border: 1px solid black;
   text-transform: capitalize;
+`;
+
+export const SpinnerLoading = styled(Spinner)`
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
 `;

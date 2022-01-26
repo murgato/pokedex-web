@@ -3,15 +3,16 @@ import React from "react";
 import Routes from "../routes";
 import "../css/App.css";
 import { Header } from "../components";
-import GlobalContext from "../context";
+import { Provider } from "react-redux";
+import store from "../store";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <GlobalContext>
+      <Provider store={store}>
         <Routes />
-      </GlobalContext>
+      </Provider>
     </div>
   );
 }

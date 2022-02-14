@@ -12,9 +12,11 @@ import {
   ImgPokemon,
 } from "../../styled-components/MiniPokemonDetails";
 import { colorsTypes } from "../../util/color/colorsTypes";
+import { addZeroes } from "../../util/functions";
 import Type from "../Type";
 
 interface Props {
+  id: string | number;
   name: string;
   backgroundColor: string;
   types: [];
@@ -23,6 +25,7 @@ interface Props {
 }
 
 const MiniPokemonDetails = ({
+  id,
   name,
   backgroundColor,
   types,
@@ -48,7 +51,7 @@ const MiniPokemonDetails = ({
             <ContainerImage>
               <ImgPokemon src={img} />
             </ContainerImage>
-            <ContainerName>{name}</ContainerName>
+            <ContainerName>{`#${addZeroes(id, 3)} ${name}`}</ContainerName>
             <ContainerTypes>
               {types?.map((type: string, index: number) => {
                 return (

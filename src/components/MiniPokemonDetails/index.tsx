@@ -1,3 +1,4 @@
+import { useWindowSize } from "@react-hook/window-size";
 import React, { memo } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../css/MiniPokemonDetails.css";
@@ -37,13 +38,15 @@ const MiniPokemonDetails = ({
   const goToPageDetails = () => {
     navigate(`PokemonDetails/${name}`);
   };
-
+  const [width, height] = useWindowSize();
   return (
     <Container
       isGrandient={colorsTypes[backgroundColor].isGrandient}
       backgroundColor={colorsTypes[backgroundColor].colors}
       className={className + " miniPokemonDetails"}
       onClick={goToPageDetails}
+      width={width}
+      height={height}
     >
       <Glass>
         <Pokeball>

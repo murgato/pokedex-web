@@ -84,3 +84,14 @@
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-device-width: 1024px) {
+  .container-stats {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-stats .stat label {
+    min-width: 13vw;
+  }
+}

@@ -1,5 +1,5 @@
 .body-pokemon {
-  margin: 0 16vw 0 16vw;
+  margin: 0 2vw;
   background: #fff url("../util/image/container_bg.png");
 }
 
@@ -129,4 +129,20 @@
   font-weight: bold;
   text-transform: capitalize;
   margin-top: 1rem;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .container-half {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .half-body {
+    width: 100%;
+    align-items: center;
+  }
+  .container-img img {
+    height: 50%;
+  }
 }

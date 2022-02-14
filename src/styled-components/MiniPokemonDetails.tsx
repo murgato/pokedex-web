@@ -4,11 +4,13 @@ import styled from "styled-components";
 interface PropsContainer {
   isGrandient?: boolean;
   backgroundColor: string;
+  width?: number;
+  height?: number;
 }
 
 export const Container = styled.div<PropsContainer>`
-  height: 42vh;
-  width: 14vw;
+  height: ${(props) => (props.height ? `${props.height * 0.45}px` : "42vh")};
+  width: 259.2px;
   margin-bottom: 20px;
   border-radius: 20px;
   ${(props) =>
@@ -20,15 +22,14 @@ export const Container = styled.div<PropsContainer>`
 
 export const Glass = styled.div`
   height: 42vh;
-  width: 14vw;
+  width: 100%;
   border-radius: 20px;
   background-image: url(https://raw.githubusercontent.com/carlosdancr/pokedex/e9bbf1714260644d07590a8758bd7ea9fe3972cc/img/bg_pokedex.svg);
 `;
 
 export const Pokeball = styled.div`
   height: 42vh;
-  width: 14vw;
-  position: absolute;
+  width: 100%;
   border-radius: 20px;
   background-image: url(https://raw.githubusercontent.com/carlosdancr/pokedex/e9bbf1714260644d07590a8758bd7ea9fe3972cc/img/pokeball.svg);
   background-position: top right;
@@ -46,7 +47,7 @@ export const Pokeball = styled.div`
 export const ContainerStats = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background-color: white;
   height: 16 vh;
@@ -79,8 +80,8 @@ export const ImgPokemon = styled.img`
 export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
-  align-items: flex-start;
+  align-content: center;
+  align-items: center;
 `;
 export const ContainerTypes = styled.div`
   display: flex;

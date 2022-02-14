@@ -5,10 +5,12 @@ interface Props {
   colorInfo: {
     [key: string]: colorsType;
   };
+  className?: string;
 }
-const Type = ({ type, colorInfo }: Props) => {
+const Type = ({ type, colorInfo, className }: Props) => {
   return (
     <ContainerType
+      className={className}
       isGrandient={colorInfo[type].isGrandient}
       backgroundColor={colorInfo[type].colors}
     >

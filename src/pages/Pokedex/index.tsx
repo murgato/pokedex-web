@@ -15,14 +15,15 @@ const Pokedex = (): JSX.Element => {
     );
 
   useEffect(() => {
-    getPokemon();
+    if (pokemons && pokemons.length === 0) getPokemon();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pokemons]);
 
   const getPokemon = async () => {
     action.isLoading(true);
 
-    let response = await PokemonControllers.getAllPokemon();
+    let response = await PokemonControllers.getPokemons();
     let auxPokemons: any[] = [];
 
     let promise: any = response.results?.map(async (result: any) => {
@@ -33,9 +34,8 @@ const Pokedex = (): JSX.Element => {
     await Promise.all(promise);
 
     auxPokemons = auxPokemons.filter((pokemon) => pokemon !== null);
-
-    if (auxPokemons.length === 0) return;
-    if (auxPokemons.length === pokemons.length) {
+    if (auxPokemons && auxPokemons.length === 0) return;
+    if (auxPokemons && pokemons && auxPokemons.length === pokemons.length) {
       action.isLoading(false);
       return;
     }
@@ -49,7 +49,7 @@ const Pokedex = (): JSX.Element => {
     action.isLoading(true);
 
     let auxPokemons = JSON.parse(JSON.stringify(pokemons));
-    let response = await PokemonControllers.getNextPage(addPage, auxPokemons);
+    let response = await PokemonControllers.getNextPage(addPage);
     let auxNewPokemons: any[] = [];
 
     let promise: any = response.results?.map(async (result: any) => {
@@ -60,6 +60,8 @@ const Pokedex = (): JSX.Element => {
     await Promise.all(promise);
 
     auxNewPokemons = auxNewPokemons.filter((pokemon) => pokemon !== null);
+    auxNewPokemons = auxNewPokemons.filter((pokemon) => pokemon.id <= 898);
+    if (auxNewPokemons.length === 897) action.isStartInfiniteScroll(false);
     let newPokemons = auxPokemons.concat(auxNewPokemons);
 
     if (newPokemons.length === 0) return;
@@ -82,6 +84,7 @@ const Pokedex = (): JSX.Element => {
             return (
               <div key={index}>
                 <MiniPokemonDetails
+                  id={pokemon.id}
                   name={pokemon.name}
                   backgroundColor={pokemon.types[0]}
                   types={pokemon.types}
